@@ -80577,7 +80577,7 @@ var App = /*#__PURE__*/function (_Component) {
           _this6.myVideo = _ref;
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-        className: "user-video",
+        className: "user-video mb-4",
         ref: function ref(_ref2) {
           _this6.userVideo = _ref2;
         }
@@ -80587,7 +80587,7 @@ var App = /*#__PURE__*/function (_Component) {
         className: "card"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
-      }, "Users"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "User list"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, this.state.users.map(function (theuser) {
         return _this6.user.id !== theuser.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

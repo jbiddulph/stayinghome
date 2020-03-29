@@ -23,7 +23,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e167166ec4.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
@@ -32,7 +32,7 @@
 </head>
 <body>
     <div id="container">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -86,6 +86,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer>
+            <div class="sayhome"><img src="img/stay-home.jpg" width="200" alt="Stay Home, protect the NHS, Save Lives"></div>
+        </footer>
     </div>
 </body>
 </html>

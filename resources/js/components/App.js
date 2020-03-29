@@ -116,13 +116,13 @@ export default class App extends Component {
                     <div className="col-md-8">
                         <div className="videoContainer">
                             <video className="my-video" ref={(ref) => {this.myVideo = ref;}}></video>
-                            <video className="user-video" ref={(ref) => {this.userVideo = ref;}}></video>
+                            <video className="user-video mb-4" ref={(ref) => {this.userVideo = ref;}}></video>
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-header">
-                                Users
+                                User list
                             </div>
                             <div className="card-body">
                                 {this.state.users.map(theuser => {

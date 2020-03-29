@@ -1,15 +1,16 @@
 .videoContainer {
-    width:500px;
-    height:380px;
+    width:100%;
+    min-height:380px;
     margin:0px auto;
     position: relative;
     background-color: #e2e2e2;
+    margin-bottom: 20px;
     .my-video {
         width:130px;
         position: absolute;
         left:10px;
         bottom: 10px;
-        border:2px solid #336699;
+        border:2px solid #f6ff00;
         border-radius: 3px;
         z-index: 2;
     }

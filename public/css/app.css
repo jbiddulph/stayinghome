@@ -1,11 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway);@charset "UTF-8";
+
+footer {
+  background-color: #636b6f;
+  color: #ffffff;
+  padding: 40px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
 
 .videoContainer {
-  width: 500px;
-  height: 380px;
+  width: 100%;
+  min-height: 380px;
   margin: 0px auto;
   position: relative;
   background-color: #e2e2e2;
+  margin-bottom: 20px;
 }
 
 .videoContainer .my-video {
@@ -13,7 +23,7 @@
   position: absolute;
   left: 10px;
   bottom: 10px;
-  border: 2px solid #336699;
+  border: 2px solid #f6ff00;
   border-radius: 3px;
   z-index: 2;
 }
