@@ -26,13 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all()->toJson();
-        $online = 0;
-            if ($users->isOnline()) {
-                $online = 1;
-            }
+//        $online = 0;
+//            if ($users->isOnline()) {
+//                $online = 1;
+//            }
 
 
-        return view('home', compact('users', 'online'));
+        return view('home', compact('users'));
     }
     public function authenticate(Request $request) {
 
