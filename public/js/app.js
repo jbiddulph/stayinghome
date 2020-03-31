@@ -80434,8 +80434,8 @@ var App = /*#__PURE__*/function (_Component) {
 
     _classCallCheck(this, App);
 
-    _this = _super.call(this, props);
-    console.log('Online: ', JSON.parse(_this.props.online));
+    _this = _super.call(this, props); // console.log('Online: ', JSON.parse(this.props.online));
+
     _this.state = {
       hasMedia: false,
       otherUserID: null,
@@ -80591,19 +80591,16 @@ var App = /*#__PURE__*/function (_Component) {
       }, "User list"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, this.state.users.map(function (theuser) {
-        if (function (theuser) {
-          return isOnline();
-        }) {
-          return _this6.user.id !== theuser.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            className: "btn btn-sm btn-dark",
-            key: theuser.id,
-            onClick: function onClick() {
-              return _this6.callTo(theuser.id);
-            }
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-            className: "fas fa-video"
-          }), " ", theuser.name) : null;
-        }
+        // if(theuser=>isOnline()) {
+        return _this6.user.id !== theuser.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "btn btn-sm btn-dark",
+          key: theuser.id,
+          onClick: function onClick() {
+            return _this6.callTo(theuser.id);
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-video"
+        }), " ", theuser.name) : null; // }
       }))))));
     }
   }]);

@@ -10,7 +10,7 @@ const APP_KEY = '1a11d2223ae84ccafdce';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        console.log('Online: ', JSON.parse(this.props.online));
+        // console.log('Online: ', JSON.parse(this.props.online));
         this.state = {
             hasMedia: false,
             otherUserID: null,
@@ -126,12 +126,12 @@ export default class App extends Component {
                             </div>
                             <div className="card-body">
                                 {this.state.users.map(theuser => {
-                                    if(theuser=>isOnline()) {
+                                    // if(theuser=>isOnline()) {
                                         return this.user.id !== theuser.id ?
                                             <button className="btn btn-sm btn-dark" key={theuser.id}
                                                     onClick={() => this.callTo(theuser.id)}>
                                                 <i className="fas fa-video"></i> {theuser.name}</button> : null;
-                                    }
+                                    // }
                                 })}
                             </div>
                         </div>
