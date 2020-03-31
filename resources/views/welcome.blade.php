@@ -83,14 +83,12 @@
             @endif
 
             <div class="content">
-                <p><i class="fas fa-exclamation-triangle text-warning"></i> Staying safe on cam <i class="fas fa-exclamation-triangle text-warning"></i></p>
                 <div class="title m-b-md">
-                    StayingHome.uk
+                    Staying<br />
+                    Home<br />
+                    uk
                 </div>
 
-                <div class="content">
-                    <p><i>Sign up, tune in, stay home!</i></p>
-                </div>
                 <div class="links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Pusher\Pusher;
 class HomeController extends Controller
@@ -25,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $user->isonline = 1;
+        $user->save();
         $users = User::all()->toJson();
 //        $online = 0;
 //            if ($users->isOnline()) {
@@ -34,6 +38,14 @@ class HomeController extends Controller
 
         return view('home', compact('users'));
     }
+//    public function logout()
+//    {
+//        $user = Auth::user();
+//        $user->isonline = 0;
+//        $user->save();
+//
+//        return view('welcome');
+//    }
     public function authenticate(Request $request) {
 
         $socket_id = $request->socket_id;

@@ -113,6 +113,13 @@ export default class App extends Component {
         return (
             <div className="app">
                 <div className="row">
+                    <div className="col-md-8 mx-auto">
+                        <p className="lead text-center">
+                            Welcome to Staying Home UK! To the left you will see the video containers and to the right a list of currently online users, click on a uer to call them.
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
                     <div className="col-md-8">
                         <div className="videoContainer">
                             <video className="my-video" ref={(ref) => {this.myVideo = ref;}}></video>
@@ -120,15 +127,15 @@ export default class App extends Component {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card online-users">
                             <div className="card-header">
-                                User list
+                                Online Users
                             </div>
                             <div className="card-body">
                                 {this.state.users.map(theuser => {
                                     // if(theuser=>isOnline()) {
                                         return this.user.id !== theuser.id ?
-                                            <button className="btn btn-sm btn-dark" key={theuser.id}
+                                            <button className="btn btn-sm btn-success" key={theuser.id}
                                                     onClick={() => this.callTo(theuser.id)}>
                                                 <i className="fas fa-video"></i> {theuser.name}</button> : null;
                                     // }

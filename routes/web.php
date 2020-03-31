@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/pusher/auth', 'HomeController@authenticate');
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::post('/logout', 'HomeController@logout')->name('logout');
