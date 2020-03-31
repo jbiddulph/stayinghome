@@ -8,9 +8,9 @@ import axios from 'axios';
 const APP_KEY = '1a11d2223ae84ccafdce';
 
 export default class App extends Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
+        console.log('Online: ', JSON.parse(this.props.online));
         this.state = {
             hasMedia: false,
             otherUserID: null,
@@ -27,7 +27,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://stayhomecam.test/api/users')
+        axios.get('https://stayinghome.uk/api/users')
             .then(response=> {
                 this.setState({users:response.data});
             })
@@ -126,8 +126,12 @@ export default class App extends Component {
                             </div>
                             <div className="card-body">
                                 {this.state.users.map(theuser => {
-                                    return this.user.id !== theuser.id ? <button className="btn btn-sm btn-dark" key={theuser.id} onClick={() => this.callTo(theuser.id)}>
-                                        <i className="fas fa-video"></i> {theuser.name}</button> : null;
+                                    if(theuser=>isOnline()) {
+                                        return this.user.id !== theuser.id ?
+                                            <button className="btn btn-sm btn-dark" key={theuser.id}
+                                                    onClick={() => this.callTo(theuser.id)}>
+                                                <i className="fas fa-video"></i> {theuser.name}</button> : null;
+                                    }
                                 })}
                             </div>
                         </div>

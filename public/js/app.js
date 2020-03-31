@@ -80429,12 +80429,13 @@ var App = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(App);
 
-  function App() {
+  function App(props) {
     var _this;
 
     _classCallCheck(this, App);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
+    console.log('Online: ', JSON.parse(_this.props.online));
     _this.state = {
       hasMedia: false,
       otherUserID: null,
@@ -80458,7 +80459,7 @@ var App = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://stayhomecam.test/api/users').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://stayinghome.uk/api/users').then(function (response) {
         _this2.setState({
           users: response.data
         });
@@ -80590,15 +80591,19 @@ var App = /*#__PURE__*/function (_Component) {
       }, "User list"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, this.state.users.map(function (theuser) {
-        return _this6.user.id !== theuser.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "btn btn-sm btn-dark",
-          key: theuser.id,
-          onClick: function onClick() {
-            return _this6.callTo(theuser.id);
-          }
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-video"
-        }), " ", theuser.name) : null;
+        if (function (theuser) {
+          return isOnline();
+        }) {
+          return _this6.user.id !== theuser.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "btn btn-sm btn-dark",
+            key: theuser.id,
+            onClick: function onClick() {
+              return _this6.callTo(theuser.id);
+            }
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-video"
+          }), " ", theuser.name) : null;
+        }
       }))))));
     }
   }]);
